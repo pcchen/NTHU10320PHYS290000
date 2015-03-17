@@ -1,7 +1,7 @@
 {
  "metadata": {
   "name": "",
-  "signature": "sha256:db61c796013622f0723c3bf375c9b1bc88942ebaf1dc1433506d852291a98a78"
+  "signature": "sha256:898cce068a30248e4ee8c31cc8c57df44478eba553fc64464dbbeac085f93b21"
  },
  "nbformat": 3,
  "nbformat_minor": 0,
@@ -28,7 +28,7 @@
      "cell_type": "code",
      "collapsed": false,
      "input": [
-      "# Problem 1.1"
+      "print 'Hello, World'"
      ],
      "language": "python",
      "metadata": {},
@@ -61,12 +61,22 @@
      "cell_type": "code",
      "collapsed": false,
      "input": [
-      "# Problem 1.2"
+      "def right_justify(s):\n",
+      "    print '                                                                                                    ', s\n",
+      "right_justify(123)"
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [],
-     "prompt_number": 2
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "                                                                                                     123\n"
+       ]
+      }
+     ],
+     "prompt_number": 1
     },
     {
      "cell_type": "markdown",
@@ -106,11 +116,32 @@
      "cell_type": "code",
      "collapsed": false,
      "input": [
-      "# Problem 1.3"
+      "def do_twice(a,b):\n",
+      "    a(b)\n",
+      "    a(b)\n",
+      "def print_twice(a):\n",
+      "    print a\n",
+      "    print a\n",
+      "print_twice('spam')\n",
+      "\n",
+      "def do_four(a,b):\n",
+      "    a(b)\n",
+      "    a(b)\n",
+      "    a(b)\n",
+      "    a(b)"
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [],
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "spam\n",
+        "spam\n"
+       ]
+      }
+     ],
      "prompt_number": 3
     },
     {
@@ -158,12 +189,48 @@
      "cell_type": "code",
      "collapsed": false,
      "input": [
-      "# Problem 1.4"
+      "def draw_grid(a,b):\n",
+      "    def draw_row(b):\n",
+      "        print '+', '- - - - + '*b\n",
+      "        print '|', '        | '*b\n",
+      "        print '|', '        | '*b\n",
+      "        print '|', '        | '*b\n",
+      "        print '|', '        | '*b\n",
+      "    while a>=0:\n",
+      "        draw_row(b)\n",
+      "        a=a-1\n",
+      "    if a<=1:\n",
+      "        print '+', '- - - - + '*b\n",
+      "draw_grid(3,5)"
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [],
-     "prompt_number": 4
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "+ - - - - + - - - - + - - - - + - - - - + - - - - + \n",
+        "|         |         |         |         |         | \n",
+        "|         |         |         |         |         | \n",
+        "|         |         |         |         |         | \n",
+        "+ - - - - + - - - - + - - - - + - - - - + - - - - + \n",
+        "|         |         |         |         |         | \n",
+        "|         |         |         |         |         | \n",
+        "|         |         |         |         |         | \n",
+        "+ - - - - + - - - - + - - - - + - - - - + - - - - + \n",
+        "|         |         |         |         |         | \n",
+        "|         |         |         |         |         | \n",
+        "|         |         |         |         |         | \n",
+        "+ - - - - + - - - - + - - - - + - - - - + - - - - + \n",
+        "|         |         |         |         |         | \n",
+        "|         |         |         |         |         | \n",
+        "|         |         |         |         |         | \n",
+        "+ - - - - + - - - - + - - - - + - - - - + - - - - + \n"
+       ]
+      }
+     ],
+     "prompt_number": 10
     },
     {
      "cell_type": "markdown",
@@ -178,7 +245,10 @@
      "cell_type": "code",
      "collapsed": false,
      "input": [
-      "# Problem 1.5"
+      "def do_n(f,n):\n",
+      "    while n>=0:\n",
+      "        f()\n",
+      "        n=n-1"
      ],
      "language": "python",
      "metadata": {},
@@ -198,12 +268,26 @@
      "cell_type": "code",
      "collapsed": false,
      "input": [
-      "# Problem 1.6"
+      "def tran(x,y):\n",
+      "    r2=float(x)**2+float(y)**2\n",
+      "    r=sqrt(r2)\n",
+      "    radian=math.atan(float(y)/float(x))\n",
+      "    d=radian*180/pi\n",
+      "    print r,d\n",
+      "tran(3,4)"
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [],
-     "prompt_number": 6
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "5.0 53.1301023542\n"
+       ]
+      }
+     ],
+     "prompt_number": 16
     },
     {
      "cell_type": "markdown",
@@ -231,12 +315,65 @@
      "cell_type": "code",
      "collapsed": false,
      "input": [
-      "# Problem 1.7"
+      "print 'input a b c n to check fermats theorem'\n",
+      "def check_fermat(a,b,c,n):\n",
+      "    if a**n+b**n==c**n:\n",
+      "        print \"Holy smokes, Fermat was wrong!\"\n",
+      "    else:\n",
+      "        print 'No, that doesn\u2019t work.'\n",
+      "check_fermat(input(),input(),input(),input())"
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [],
-     "prompt_number": 7
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "input a b c n to check fermats theorem\n"
+       ]
+      },
+      {
+       "name": "stdout",
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "1\n"
+       ]
+      },
+      {
+       "name": "stdout",
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "2\n"
+       ]
+      },
+      {
+       "name": "stdout",
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "3\n"
+       ]
+      },
+      {
+       "name": "stdout",
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "4\n"
+       ]
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "No, that doesn\u2019t work.\n"
+       ]
+      }
+     ],
+     "prompt_number": 18
     },
     {
      "cell_type": "markdown",
@@ -258,12 +395,61 @@
      "cell_type": "code",
      "collapsed": false,
      "input": [
-      "# Problem 1.8"
+      "print \"enter 3 numpers to check the possibility of it being a triangle's sides\"\n",
+      "def is_triangle(a,b,c):\n",
+      "    if a>=b+c:\n",
+      "        print 'No'\n",
+      "    if b>=a+c:\n",
+      "        print 'No'\n",
+      "    if c>=b+a:\n",
+      "        print 'No'\n",
+      "    else:\n",
+      "        print 'Yes'\n",
+      "is_triangle(input(),input(),input())"
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [],
-     "prompt_number": 8
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "enter 3 numpers to check the possibility of it being a triangle's sides\n"
+       ]
+      },
+      {
+       "name": "stdout",
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "1\n"
+       ]
+      },
+      {
+       "name": "stdout",
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "2\n"
+       ]
+      },
+      {
+       "name": "stdout",
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "3\n"
+       ]
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "No\n"
+       ]
+      }
+     ],
+     "prompt_number": 22
     },
     {
      "cell_type": "markdown",
@@ -278,12 +464,28 @@
      "cell_type": "code",
      "collapsed": false,
      "input": [
-      "# Problem 1.9"
+      "def f(x,y):\n",
+      "    if x>y:\n",
+      "        return 1\n",
+      "    if x==y:\n",
+      "        return 0\n",
+      "    if x<y:\n",
+      "        return -1\n",
+      "f(1,2)"
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [],
-     "prompt_number": 9
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 23,
+       "text": [
+        "-1"
+       ]
+      }
+     ],
+     "prompt_number": 23
     },
     {
      "cell_type": "markdown",
@@ -313,12 +515,28 @@
      "cell_type": "code",
      "collapsed": false,
      "input": [
-      "# Problem 1.10"
+      "def A(m,n):\n",
+      "    if m==0:\n",
+      "        return n+1\n",
+      "    if m>0 and n==0:\n",
+      "        return A(m-1,1)\n",
+      "    if m>0 and n>0:\n",
+      "        return A(m-1,A(m,n-1))\n",
+      "A(3,4)"
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [],
-     "prompt_number": 10
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 25,
+       "text": [
+        "125"
+       ]
+      }
+     ],
+     "prompt_number": 25
     },
     {
      "cell_type": "markdown",
@@ -333,12 +551,28 @@
      "cell_type": "code",
      "collapsed": false,
      "input": [
-      "# Problem 1.11"
+      "def is_power(a,b):\n",
+      "    while a>b and a%b==0:\n",
+      "        a=a/b\n",
+      "    if a==b:\n",
+      "        print True\n",
+      "    else:\n",
+      "        pass\n",
+      "        #print False\n",
+      "is_power(25,5)"
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [],
-     "prompt_number": 11
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "True\n"
+       ]
+      }
+     ],
+     "prompt_number": 30
     },
     {
      "cell_type": "markdown",
@@ -357,12 +591,33 @@
      "cell_type": "code",
      "collapsed": false,
      "input": [
-      "# Problem 1.12"
+      "def gcd(a,b):\n",
+      "    while a%b!=0:\n",
+      "        return gcd(b,a%b)\n",
+      "    if a%b==0:\n",
+      "        print b\n",
+      "gcd(48,42)"
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [],
-     "prompt_number": 12
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "6\n"
+       ]
+      }
+     ],
+     "prompt_number": 33
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
     }
    ],
    "metadata": {}
